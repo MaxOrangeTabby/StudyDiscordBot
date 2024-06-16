@@ -1,3 +1,4 @@
+import discord
 from discord.ext import commands
 
 class Flashcards(commands.Cog):
@@ -23,8 +24,6 @@ class Flashcards(commands.Cog):
         except Exception as excep:
             await context.send("Error occurred: {excep}")
 
-
     
-    @commands.command(name='add_multiple_flashcard')
-    async def add_multiple_flashcard(self):
-        return
+async def setup(bot):
+    await bot.add_cog(Flashcards(bot))
