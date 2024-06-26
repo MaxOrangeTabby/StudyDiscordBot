@@ -9,6 +9,5 @@ class Responses(commands.Cog):
     async def help(self, context):
         return
     
-    
 async def setup(bot):
     await bot.add_cog(Responses(bot))
