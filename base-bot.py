@@ -12,7 +12,18 @@ bot = commands.Bot(command_prefix='!', intents=intents)
 
 @bot.command(name='ping')
 async def ping(context):
-    await context.send('Bot Response')
+    await context.send('Hop on League')
 
-
+async def load_cogs():
+  for filename in os.listdir('./cogs'):
+    if filename.endswith('.py'):
+        try:
+            await bot.load_extension(f'cogs.{filename[:-3]}')
+            print(f"Loaded Cog: {filename[:-3]}")
+        except Exception as e:
+           print({e})
+           
+@bot.event
+async def on_ready():
+    await load_cogs()
 bot.run(TOKEN)
