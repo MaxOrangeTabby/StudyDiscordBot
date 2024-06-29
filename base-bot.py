@@ -10,6 +10,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
+# Flashcard set structure -> {Set Name, Set List}
+# Set List structure -> [{Question, Answer}, {Question, Answer}, {Question, Answer}]
 bot.flashcard_sets = {}
 bot.flashcard_sets_amt = 0
 
