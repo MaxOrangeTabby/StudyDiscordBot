@@ -10,6 +10,9 @@ intents = discord.Intents.default()
 intents.message_content = True
 bot = commands.Bot(command_prefix='!', intents=intents)
 
+bot.flashcard_sets = {}
+bot.flashcard_sets_amt = 0
+
 @bot.command(name='ping')
 async def ping(context):
     await context.send('Hop on League')
